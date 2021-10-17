@@ -1,0 +1,170 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+
+:root {
+  --red: hsl(0, 78%, 62%);
+  --cyan: hsl(180, 62%, 55%);
+  --orange: hsl(34, 97%, 64%);
+  --blue: hsl(212, 86%, 64%);
+
+  --very-dark-blue: hsl(234, 12%, 34%);
+  --grayish-blue: hsl(229, 6%, 66%);
+  --very-light-gray: hsl(0, 0%, 98%);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  /* Normally default font size 16px for most of the browsers. So 16px = 1rem, but it makes calculations difficult  */
+  font-size: 62.5%;
+  /* This makes 1rem = 10px, so the calculation becomes easy. Like 18px = 1.8rem, 33px = 3.3rem, etc. */
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.5rem;
+}
+
+.container {
+  padding: 8rem 3rem;
+  background-color: var(--very-light-gray);
+  max-width: 111rem;
+  margin: auto;
+}
+
+.text {
+  width: 30rem;
+  text-align: center;
+  margin: 0 auto 6rem;
+}
+
+h1 {
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: var(--very-dark-blue);
+  margin-bottom: 2rem;
+}
+
+.light {
+  font-weight: 200;
+}
+
+.text p {
+  font-size: 1.4rem;
+  color: var(--grayish-blue);
+  line-height: 1.5;
+}
+
+.card {
+  padding: 3rem;
+  border: none;
+  border-radius: 0.6rem;
+  position: relative;
+  box-shadow: 0 1rem 2rem hsla(229, 6%, 66%, 0.3);
+}
+
+.card-outline:not(:last-of-type) {
+  padding-bottom: 1rem;
+}
+
+.card-outline:not(:first-of-type) {
+  padding-top: 1rem;
+}
+
+h2 {
+  font-size: 2rem;
+  color: var(--very-dark-blue);
+}
+
+.card p {
+  font-size: 1rem;
+  color: var(--grayish-blue);
+  margin-bottom: 3rem;
+}
+
+.img {
+  text-align: right;
+}
+
+.card-cyan .card {
+  border-top: 0.4rem solid var(--cyan);
+}
+
+.card-red .card {
+  border-top: 0.4rem solid var(--red);
+}
+
+.card-orange .card {
+  border-top: 0.4rem solid var(--orange);
+}
+
+.card-blue .card {
+  border-top: 0.4rem solid var(--blue);
+}
+
+@media (min-width: 641px) {
+  .text {
+    width: 47rem;
+  }
+
+  h1 {
+    font-size: 3.4rem;
+  }
+
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .card-outline {
+    flex: 0 0.8 50%;
+    padding: 1rem;
+  }
+
+  .card {
+    height: 100%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .cards {
+    display: block;
+    position: relative;
+    height: 51rem;
+  }
+
+  .card-outline {
+    display: block;
+    width: 31.2rem;
+    position: absolute;
+  }
+
+  .card-cyan {
+    top: 50%;
+    left: 50%;
+    transform: translate(-155%, -50%);
+  }
+
+  .card-red {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .card-orange {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .card-blue {
+    top: 50%;
+    right: 50%;
+    transform: translate(155%, -50%);
+  }
+}
